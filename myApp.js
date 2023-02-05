@@ -1,8 +1,12 @@
 let express = require('express');
+let bodyParser = require('body-parser')
 let app = express();
 //const mySecret = process.env['MESSAGE_STYLE']
 
 console.log("Hello World")
+
+app.use(bodyParser.urlencoded({extended: false}))
+
 app.use(function(req, res, next){
   console.log(req.method + " " + req.path + " - " + req.ip)
   next()
