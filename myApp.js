@@ -58,7 +58,14 @@ app.route("/name").get(function(req, res){
   })
 })
 
-
+let firstname, lastname
+app.post("/name", function(req, res){
+  firstname = req.body.first
+  lastname = req.body.last
+  res.json({
+    name: `${firstname} ${lastname}`
+  })
+})
 
 
 
