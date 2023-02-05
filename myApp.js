@@ -5,7 +5,7 @@ let app = express();
 
 console.log("Hello World")
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(function(req, res, next){
   console.log(req.method + " " + req.path + " - " + req.ip)
